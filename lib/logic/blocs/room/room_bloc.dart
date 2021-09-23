@@ -13,7 +13,7 @@ class RoomBloc extends Bloc<RoomEvent, RoomState> {
           RoomState(
             url: url != null && url.isNotEmpty
                 ? url.replaceAll('roomid', 'roomId')
-                : 'https://alpha.huddle01.com/?roomId=${randomAlpha(8).toLowerCase()}',
+                : 'https://sdk.huddle01.com/?roomId=${randomAlpha(8).toLowerCase()}',
           ),
         );
 

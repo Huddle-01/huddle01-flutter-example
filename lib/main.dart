@@ -135,7 +135,7 @@ class MyApp extends StatelessWidget {
                       displayName: displayName,
                       url: url != null
                           ? 'wss://${uri.host}:4443'
-                          : 'wss://alpha.huddle01.com:4443',
+                          : 'wss://sdk.huddle01.com:4443',
                       roomId: uri.queryParameters['roomId'] ??
                           uri.queryParameters['roomid'] ??
                           randomAlpha(8).toLowerCase(),
