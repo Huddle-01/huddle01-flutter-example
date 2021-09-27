@@ -131,19 +131,11 @@ class MyApp extends StatelessWidget {
 
                     return HuddleClientRepository(
                       peerId: id,
-                      // consumersBloc: context.read<ConsumersBloc>(),
                       displayName: displayName,
-                      url: url != null
-                          ? 'wss://${uri.host}:4443'
-                          : 'wss://sdk.huddle01.com:4443',
+                      apiKey: "i4pzqbpxza8vpijQMwZsP1H7nZZEH0TN3vR4NdNS",
                       roomId: uri.queryParameters['roomId'] ??
                           uri.queryParameters['roomid'] ??
                           randomAlpha(8).toLowerCase(),
-                      // peersBloc: context.read<PeersBloc>(),
-                      // producersBloc: context.read<ProducersBloc>(),
-                      // meBloc: context.read<MeBloc>(),
-                      // roomBloc: context.read<RoomBloc>(),
-                      // mediaDevicesBloc: context.read<MediaDevicesBloc>(),
                       audioInputDeviceId: audioInputDeviceId,
                       videoInputDeviceId: videoInputDeviceId,
                     )..join();
