@@ -8,12 +8,12 @@ part 'room_event.dart';
 part 'room_state.dart';
 
 class RoomBloc extends Bloc<RoomEvent, RoomState> {
-  RoomBloc(String url)
+  RoomBloc(String roomId)
       : super(
           RoomState(
-            url: url != null && url.isNotEmpty
-                ? url.replaceAll('roomid', 'roomId')
-                : 'https://sdk.huddle01.com/?roomId=${randomAlpha(8).toLowerCase()}',
+            roomId: roomId != null && roomId.isNotEmpty
+                ? roomId
+                : randomAlpha(8).toLowerCase(),
           ),
         );
 

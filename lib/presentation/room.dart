@@ -61,15 +61,15 @@ class _RoomState extends State<Room> {
       appBar: AppBar(
         title: Builder(
           builder: (context) {
-            String url = context.select((RoomBloc bloc) => bloc.state.url!);
-            return Text(Uri.parse(url).queryParameters['roomId']!);
+            String roomId = context.select((RoomBloc bloc) => bloc.state.roomId!);
+            return Text(roomId);
           },
         ),
         actions: [
           IconButton(
             onPressed: () {
-              String url = context.read<RoomBloc>().state.url!;
-              Clipboard.setData(ClipboardData(text: url));
+              String roomId = context.read<RoomBloc>().state.roomId!;
+              Clipboard.setData(ClipboardData(text: roomId));
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: const Text('Room link copied to clipboard'),

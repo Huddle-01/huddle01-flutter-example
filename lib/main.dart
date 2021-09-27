@@ -125,17 +125,13 @@ class MyApp extends StatelessWidget {
                     String displayName = meState.displayName;
                     String id = meState.id;
                     final roomState = context.read<RoomBloc>().state;
-                    String url = roomState.url!;
-
-                    Uri uri = Uri.parse(url);
+                    String roomId = roomState.roomId!;
 
                     return HuddleClientRepository(
                       peerId: id,
                       displayName: displayName,
                       apiKey: "i4pzqbpxza8vpijQMwZsP1H7nZZEH0TN3vR4NdNS",
-                      roomId: uri.queryParameters['roomId'] ??
-                          uri.queryParameters['roomid'] ??
-                          randomAlpha(8).toLowerCase(),
+                      roomId: roomId,
                       audioInputDeviceId: audioInputDeviceId,
                       videoInputDeviceId: videoInputDeviceId,
                     )..join();
